@@ -10,11 +10,11 @@ const posts = [
   {
     slug: 'how-much-does-event-av-cost',
     title: 'How Much Does Event AV Cost? A Complete 2025 Pricing Guide',
-    excerpt: 'AV costs vary widely depending on event size, services, and city. Here is a breakdown of what you should expect to pay for audio, video, lighting, and staging — with real price ranges.',
+    excerpt: 'AV costs vary widely depending on event size, services, and city. Here is a breakdown of what you should expect to pay for audio, video, lighting, and staging -- with real price ranges.',
     category: 'Cost & Pricing',
     readTime: '8 min read',
     date: 'March 2025',
-    image: '💰',
+    image: '--',
   },
   {
     slug: 'event-av-checklist',
@@ -23,34 +23,34 @@ const posts = [
     category: 'Planning Guides',
     readTime: '6 min read',
     date: 'February 2025',
-    image: '✅',
+    image: '--',
   },
   {
     slug: 'audio-requirements-for-corporate-events',
     title: 'Audio Requirements for Corporate Events: What You Actually Need',
-    excerpt: 'Microphones, PA systems, monitors, and mixing — here is what audio setup you actually need for a conference, general session, or corporate gala, and when to upgrade.',
+    excerpt: 'Microphones, PA systems, monitors, and mixing -- here is what audio setup you actually need for a conference, general session, or corporate gala, and when to upgrade.',
     category: 'AV Requirements',
     readTime: '7 min read',
     date: 'February 2025',
-    image: '🎙️',
+    image: '--',
   },
   {
     slug: 'common-event-av-mistakes',
     title: '7 Common Event AV Mistakes That Kill Productions (And How to Avoid Them)',
-    excerpt: 'From undersized PA systems to last-minute vendor changes — these are the production mistakes event planners make most often, and how to prevent every one of them.',
+    excerpt: 'From undersized PA systems to last-minute vendor changes -- these are the production mistakes event planners make most often, and how to prevent every one of them.',
     category: 'Mistakes to Avoid',
     readTime: '5 min read',
     date: 'January 2025',
-    image: '⚠️',
+    image: '--',
   },
   {
     slug: 'led-wall-vs-projection-which-is-right',
     title: 'LED Wall vs. Projection Screen: Which Is Right for Your Event?',
-    excerpt: 'LED walls look incredible, but they are not always the right choice. Here is a clear comparison of LED panels and projection systems — cost, brightness, setup time, and when to use each.',
+    excerpt: 'LED walls look incredible, but they are not always the right choice. Here is a clear comparison of LED panels and projection systems -- cost, brightness, setup time, and when to use each.',
     category: 'AV Requirements',
     readTime: '6 min read',
     date: 'January 2025',
-    image: '🖥️',
+    image: '--',
   },
   {
     slug: 'hybrid-event-av-guide',
@@ -59,7 +59,7 @@ const posts = [
     category: 'Planning Guides',
     readTime: '9 min read',
     date: 'December 2024',
-    image: '📡',
+    image: '--',
   },
   {
     slug: 'event-production-in-las-vegas',
@@ -68,7 +68,7 @@ const posts = [
     category: 'City Guides',
     readTime: '7 min read',
     date: 'December 2024',
-    image: '🎰',
+    image: '--',
   },
   {
     slug: 'how-to-write-av-rfp',
@@ -77,16 +77,16 @@ const posts = [
     category: 'Planning Guides',
     readTime: '5 min read',
     date: 'November 2024',
-    image: '📋',
+    image: '--',
   },
   {
     slug: 'general-session-production-guide',
     title: 'General Session Production: How to Run a World-Class Conference Opener',
-    excerpt: 'The general session sets the tone for your entire conference. Here is how to design the production — stage, screens, audio, lighting, and run of show — to make it land.',
+    excerpt: 'The general session sets the tone for your entire conference. Here is how to design the production -- stage, screens, audio, lighting, and run of show -- to make it land.',
     category: 'AV Requirements',
     readTime: '8 min read',
     date: 'November 2024',
-    image: '🎪',
+    image: '--',
   },
   {
     slug: 'corporate-event-av-new-york',
@@ -95,7 +95,7 @@ const posts = [
     category: 'City Guides',
     readTime: '7 min read',
     date: 'October 2024',
-    image: '🗽',
+    image: '--',
   },
 ];
 
@@ -109,7 +109,7 @@ export default function BlogPage() {
           <p className="section-label">Resources</p>
           <h1 className="section-title-light mt-2 mb-4 max-w-3xl">Event Production Guides & Resources</h1>
           <p className="text-gray-300 max-w-2xl">
-            Practical guides on AV costs, production planning, and how to run technically flawless events — from single-day corporate meetings to multi-day national conferences.
+            Practical guides on AV costs, production planning, and how to run technically flawless events -- from single-day corporate meetings to multi-day national conferences.
           </p>
         </div>
       </section>
@@ -133,8 +133,8 @@ export default function BlogPage() {
               <h2 className="text-xl font-bold text-white mt-2 mb-3">{posts[0].title}</h2>
               <p className="text-gray-300 text-sm mb-4">{posts[0].excerpt}</p>
               <div className="flex items-center gap-4">
-                <Link href={`/blog/${posts[0].slug}`} className="btn-primary py-2 px-5 text-sm">Read Article →</Link>
-                <span className="text-gray-400 text-xs">{posts[0].readTime} · {posts[0].date}</span>
+                <Link href={`/blog/${posts[0].slug}`} className="btn-primary py-2 px-5 text-sm">Read Article --</Link>
+                <span className="text-gray-400 text-xs">{posts[0].readTime} -- {posts[0].date}</span>
               </div>
             </div>
           </div>
@@ -148,7 +148,7 @@ export default function BlogPage() {
                 <h3 className="font-bold text-navy mb-2 group-hover:text-accent transition-colors leading-snug">{post.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed flex-1">{post.excerpt}</p>
                 <div className="mt-4 flex items-center justify-between">
-                  <span className="text-accent text-sm font-medium">Read more →</span>
+                  <span className="text-accent text-sm font-medium">Read more --</span>
                   <span className="text-gray-400 text-xs">{post.readTime}</span>
                 </div>
               </Link>
@@ -158,7 +158,7 @@ export default function BlogPage() {
           {/* CTA */}
           <div className="mt-14 bg-gray-50 rounded-2xl p-8 text-center">
             <h3 className="text-xl font-bold text-navy mb-3">Ready to Plan Your Event?</h3>
-            <p className="text-gray-600 mb-6 max-w-md mx-auto">Get a full production quote — audio, video, lighting, staging, and crew — typically within 48 hours.</p>
+            <p className="text-gray-600 mb-6 max-w-md mx-auto">Get a full production quote -- audio, video, lighting, staging, and crew -- typically within 48 hours.</p>
             <Link href="/contact" className="btn-primary text-base px-8 py-3">Get a Production Quote</Link>
           </div>
         </div>

@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --navy: #0c2340;
+  --navy-light: #163a5c;
+  --accent: #2478c1;
+  --accent-dark: #1a5a96;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a2e;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-3 rounded transition-colors inline-block;
+  }
+  .btn-secondary {
+    @apply border border-white text-white hover:bg-white hover:text-navy font-semibold px-6 py-3 rounded transition-colors inline-block;
+  }
+  .btn-outline {
+    @apply border border-accent text-accent hover:bg-accent hover:text-white font-semibold px-6 py-3 rounded transition-colors inline-block;
+  }
+  .section-label {
+    @apply text-accent text-xs font-bold uppercase tracking-widest mb-2;
+  }
+  .section-title {
+    @apply text-3xl sm:text-4xl font-bold text-navy leading-tight;
+  }
+  .section-title-light {
+    @apply text-3xl sm:text-4xl font-bold text-white leading-tight;
+  }
+  .card {
+    @apply bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow;
+  }
+  .faq-item {
+    @apply border-b border-gray-200 py-5;
+  }
+}

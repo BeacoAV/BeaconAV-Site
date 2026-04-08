@@ -8,8 +8,8 @@ const HUBSPOT_FORM_GUID = '61567685-f427-4ca9-bce7-74ceeb18caee';
 const WEB3FORMS_KEY = 'c2a16507-9e5e-4494-b3cf-6f9f1af9cbdb';
 
 const eventTypes = ['Corporate Event', 'Conference / Convention', 'Brand Activation', 'Gala / Award Ceremony', 'Product Launch', 'Trade Show', 'Concert / Entertainment', 'Multi-City / Roadshow', 'Other'];
-const headcounts = ['Under 50', '50–200', '200–500', '500–1,000', '1,000–2,500', '2,500+'];
-const budgets = ['Under $5,000', '$5,000–$15,000', '$15,000–$50,000', '$50,000–$100,000', '$100,000+', 'Not sure yet'];
+const headcounts = ['Under 50', '50â200', '200â500', '500â1,000', '1,000â2,500', '2,500+'];
+const budgets = ['Under $5,000', '$5,000â$15,000', '$15,000â$50,000', '$50,000â$100,000', '$100,000+', 'Not sure yet'];
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -75,7 +75,7 @@ export default function ContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `New Event Quote — ${formData.event_type || 'Event'} — ${formData.city} — ${formData.headcount}`,
+          subject: `New Event Quote â ${formData.event_type || 'Event'} â ${formData.city} â ${formData.headcount}`,
           name: `${formData.firstname} ${formData.lastname}`.trim(),
           email: formData.email,
           phone: formData.phone,
@@ -90,11 +90,11 @@ export default function ContactPage() {
         }),
       });
 
-      if (!w3Res.ok) throw new Error('Submission failed');
+      const w3Data = await w3Res.json(); if (!w3Data.success) throw new Error('Submission failed');
       setStatus('success');
     } catch {
       setStatus('error');
-      setErrorMsg('Something went wrong. Please try again or smail us at hello@beaconav.co');
+      setErrorMsg('Something went wrong. Please try again or email us at hello@beaconav.co');
     }
   };
 
@@ -105,7 +105,7 @@ export default function ContactPage() {
           <p className="section-label">Get a Quote</p>
           <h1 className="section-title-light mt-2 mb-4 max-w-3xl">Request a Production Quote</h1>
           <p className="text-gray-300 max-w-2xl">
-            Tell us about your event and we&apos;ll send a full, itemized production quote — typically within 48 hours. No obligation.
+            Tell us about your event and we&apos;ll send a full, itemized production quote â typically within 48 hours. No obligation.
           </p>
         </div>
       </section>
@@ -116,7 +116,7 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             {status === 'success' ? (
               <div className="bg-green-50 border border-green-200 rounded-2xl p-10 text-center">
-                <div className="text-5xl mb-4">✓</div>
+                <div className="text-5xl mb-4">â</div>
                 <h2 className="text-2xl font-bold text-navy mb-3">Quote Request Received</h2>
                 <p className="text-gray-600 mb-2">We&apos;ve received your event details and will follow up with a full production quote within 48 hours.</p>
                 <p className="text-gray-500 text-sm">Check {formData.email} for a confirmation.</p>
@@ -171,7 +171,7 @@ export default function ContactPage() {
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Event City / Venue *</label>
                       <input required name="city" value={formData.city} onChange={handleChange}
-                        placeholder="e.g. Austin, TX — Hyatt Regency"
+                        placeholder="e.g. Austin, TX â Hyatt Regency"
                         className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent" />
                     </div>
                     <div>
@@ -223,7 +223,7 @@ export default function ContactPage() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Additional Details</label>
                   <textarea name="message" rows={4} value={formData.message} onChange={handleChange}
-                    placeholder="Describe your event — venue details, setup requirements, special requests, or anything that will help us build an accurate quote."
+                    placeholder="Describe your event â venue details, setup requirements, special requests, or anything that will help us build an accurate quote."
                     className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent resize-none" />
                 </div>
 
@@ -233,7 +233,7 @@ export default function ContactPage() {
                   className="btn-primary w-full py-3 text-base disabled:opacity-60 disabled:cursor-not-allowed">
                   {status === 'submitting' ? 'Sending...' : 'Request My Production Quote'}
                 </button>
-                <p className="text-gray-400 text-xs text-center">No obligation · Quotes within 48 hours · No spam</p>
+                <p className="text-gray-400 text-xs text-center">No obligation Â· Quotes within 48 hours Â· No spam</p>
               </form>
             )}
           </div>
@@ -265,14 +265,14 @@ export default function ContactPage() {
             <div className="card">
               <h3 className="font-bold text-navy mb-2">Talk to Our Team</h3>
               <p className="text-sm text-gray-600 mb-3">Prefer to talk through your event first?</p>
-              <p className="text-sm font-medium text-navy">Mon – Fri, 8am – 6pm CT</p>
+              <p className="text-sm font-medium text-navy">Mon â Fri, 8am â 6pm CT</p>
               <a href="mailto:hello@beaconav.co" className="text-accent text-sm font-medium hover:underline">hello@beaconav.co</a>
             </div>
 
             <div className="bg-navy rounded-xl p-5">
               <p className="text-white font-bold mb-1">AV Partner?</p>
               <p className="text-gray-300 text-sm mb-3">Looking to join our production network?</p>
-              <a href="/partners" className="text-accent text-sm font-semibold hover:underline">Learn about the partner program →</a>
+              <a href="/partners" className="text-accent text-sm font-semibold hover:underline">Learn about the partner program â</a>
             </div>
           </div>
         </div>

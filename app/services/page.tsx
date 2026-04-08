@@ -16,8 +16,8 @@ export default function ServicesPage() {
           <p className="section-label">Production Services</p>
           <h1 className="section-title-light mt-2 mb-4 max-w-3xl">Full-Service Event Production</h1>
           <p className="text-gray-300 max-w-2xl">
-            From audio and lighting to LED walls and full general session production \u2014 Beacon AV
-            delivers complete technical execution for live events across the country.
+            From audio and lighting to LED walls and full general session production {'\u2014'} Beacon AV delivers
+            complete technical execution for live events across the country.
           </p>
         </div>
       </section>
@@ -28,7 +28,7 @@ export default function ServicesPage() {
             {services.map((s) => (
               <Link
                 key={s.slug}
-                href={\`/services/\${s.slug}\`}
+                href={`/services/${s.slug}`}
                 className="card hover:border-accent hover:shadow-md transition-all group"
               >
                 <div className="text-4xl mb-4">{s.icon}</div>
@@ -39,12 +39,11 @@ export default function ServicesPage() {
                 <ul className="space-y-1 mb-4">
                   {s.capabilities.slice(0, 3).map((c) => (
                     <li key={c} className="text-xs text-gray-500 flex gap-2">
-                      <span className="text-accent flex-shrink-0">{'\u2713'}</span>
-                      {c}
+                      <span className="text-accent flex-shrink-0">{'\u2713'}</span> {c}
                     </li>
                   ))}
                 </ul>
-                <span className="text-accent text-sm font-semibold">Learn more \u2192</span>
+                <span className="text-accent text-sm font-semibold">Learn more {'\u2192'}</span>
               </Link>
             ))}
           </div>
@@ -56,8 +55,8 @@ export default function ServicesPage() {
         <div className="max-w-2xl mx-auto">
           <h2 className="section-title-light mb-4">Need Multiple Services?</h2>
           <p className="text-gray-300 mb-8">
-            Most events require a combination of audio, video, lighting, and staging. We quote and
-            manage it all as a single package.
+            Most events require a combination of audio, video, lighting, and staging. We quote and manage it all as a
+            single package.
           </p>
           <Link href="/contact" className="btn-primary text-base px-8 py-3">
             Get a Production Quote

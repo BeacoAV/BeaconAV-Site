@@ -39,7 +39,7 @@ export const cities: City[] = [
     intro: "Las Vegas is the event production capital of the world. From massive trade shows at the Las Vegas Convention Center to high-stakes corporate galas at the Strip's resort venues, our Las Vegas network delivers world-class production every time.",
     venues: ['Las Vegas Convention Center','MGM Grand Garden Arena','The Venetian Expo','Mandalay Bay Convention Center','Wynn Las Vegas','Caesars Palace','T-Mobile Arena'],
     suburbs: ['Henderson','North Las Vegas','Summerlin','Boulder City'],
-    eventNote: 'The world's event capital. Our Las Vegas partners are accustomed to high-pressure, high-visibility productions with fast turnarounds. CES (January) and NAB (April) are peak demand periods — plan well ahead.' },
+    eventNote: "The world's event capital. Our Las Vegas partners are accustomed to high-pressure, high-visibility productions with fast turnarounds. CES (January) and NAB (April) are peak demand periods — plan well ahead." },
   { slug: 'san-francisco-ca', name: 'San Francisco', state: 'California', stateAbbr: 'CA', tier: 1,
     intro: "San Francisco's tech sector drives a high volume of corporate events, product launches, and investor-facing productions. Our Bay Area network understands the expectations of tech audiences — clean, high-tech production with seamless execution.",
     venues: ['Moscone Center','Bill Graham Civic Auditorium','Chase Center','The Palace Hotel','Exploratorium','City View at Metreon','Fort Mason Center'],

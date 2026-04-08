@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About Beacon AV | National Event Production Company',
-  description: 'Beacon AV is a national event production company delivering audio, video, lighting, and staging for live events across the United States — through a vetted partner network and AI-driven operations.',
+  description: 'Beacon AV is a national event production company delivering audio, video, lighting, and staging for live events across the United States -- through a vetted partner network and AI-driven operations.',
 };
 
 const stats = [
@@ -14,7 +14,7 @@ const stats = [
 ];
 
 const values = [
-  { title: 'Execution first', desc: 'We are a production company, not a booking platform. Every event is actively managed by our team — from quote through strike.' },
+  { title: 'Execution first', desc: 'We are a production company, not a booking platform. Every event is actively managed by our team -- from quote through strike.' },
   { title: 'Consistency at scale', desc: 'The same production standard in Austin as in New York. Centralized quality control means every market delivers the same result.' },
   { title: 'Transparent pricing', desc: 'Every event gets a written, itemized quote before we move. The number you approve is the number you pay.' },
   { title: 'Partner-powered, Beacon-managed', desc: 'Our production network gives us national reach. Our team gives you a single point of accountability for every event.' },
@@ -31,7 +31,7 @@ export default function AboutPage() {
             National Event Production.<br />One Company. Any City.
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl">
-            Beacon AV delivers full-service audio, video, lighting, and staging for live events across the country — managed centrally, executed locally.
+            Beacon AV delivers full-service audio, video, lighting, and staging for live events across the country -- managed centrally, executed locally.
           </p>
         </div>
       </section>
@@ -44,13 +44,13 @@ export default function AboutPage() {
             <h2 className="section-title mt-2 mb-5">The Problem We Solve</h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Event planners and companies producing live events face the same problem everywhere: finding reliable, qualified production partners in every city — and managing multiple vendors for every event — is expensive, time-consuming, and inconsistent.
+                Event planners and companies producing live events face the same problem everywhere: finding reliable, qualified production partners in every city -- and managing multiple vendors for every event -- is expensive, time-consuming, and inconsistent.
               </p>
               <p>
                 Local AV companies are hard to vet from a distance. Quality varies. Coordination falls on the client. And when something goes wrong on event day, there&apos;s no single point of accountability.
               </p>
               <p>
-                Beacon AV was built to fix that. We are a national production company with a vetted partner network in 50+ markets — so you deal with one team, get one quote, and get one consistent standard, regardless of where your event takes place.
+                Beacon AV was built to fix that. We are a national production company with a vetted partner network in 50+ markets -- so you deal with one team, get one quote, and get one consistent standard, regardless of where your event takes place.
               </p>
             </div>
           </div>
@@ -72,24 +72,24 @@ export default function AboutPage() {
           <h2 className="section-title mt-2 mb-10 max-w-2xl">The Beacon AV Model</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="bg-white rounded-xl p-7 border border-gray-200">
-              <div className="text-3xl mb-3">📋</div>
+              <div className="text-3xl mb-3">--</div>
               <h3 className="font-bold text-navy text-lg mb-3">Sales & Coordination</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Beacon AV handles all client-facing activity — inquiry, quoting, production planning, logistics coordination, and post-event follow-up. You always work with our team.
+                Beacon AV handles all client-facing activity -- inquiry, quoting, production planning, logistics coordination, and post-event follow-up. You always work with our team.
               </p>
             </div>
             <div className="bg-white rounded-xl p-7 border border-gray-200">
-              <div className="text-3xl mb-3">🤝</div>
+              <div className="text-3xl mb-3">--</div>
               <h3 className="font-bold text-navy text-lg mb-3">Partner Network Execution</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Events are executed through our vetted network of AV companies and freelance technicians — background-checked, insured, and trained to our production standard in every market.
+                Events are executed through our vetted network of AV companies and freelance technicians -- background-checked, insured, and trained to our production standard in every market.
               </p>
             </div>
             <div className="bg-white rounded-xl p-7 border border-gray-200">
-              <div className="text-3xl mb-3">⚙️</div>
+              <div className="text-3xl mb-3">--</div>
               <h3 className="font-bold text-navy text-lg mb-3">AI-Driven Operations</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Our back-end operations are built for scale — logistics, partner matching, scheduling, and quality control are powered by AI-driven workflows that keep overhead low and speed high.
+                Our back-end operations are built for scale -- logistics, partner matching, scheduling, and quality control are powered by AI-driven workflows that keep overhead low and speed high.
               </p>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {values.map((v) => (
               <div key={v.title} className="card">
-                <div className="text-accent font-bold text-xl mb-2">✓</div>
+                <div className="text-accent font-bold text-xl mb-2">--</div>
                 <h3 className="font-bold text-navy mb-2">{v.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{v.desc}</p>
               </div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
       <section className="bg-navy py-14 px-4 text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="section-title-light mb-4">Producing Events Nationwide</h2>
-          <p className="text-gray-300 mb-8">Active production networks in 50+ US markets. If you don&apos;t see your city, contact us — we can typically source a vetted production team within 48 hours.</p>
+          <p className="text-gray-300 mb-8">Active production networks in 50+ US markets. If you don&apos;t see your city, contact us -- we can typically source a vetted production team within 48 hours.</p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link href="/locations" className="btn-primary">See All Markets</Link>
             <Link href="/contact" className="btn-outline">Get a Quote</Link>
@@ -131,7 +131,7 @@ export default function AboutPage() {
           <div>
             <h3 className="text-xl font-bold text-navy mb-2">Are You an AV Professional or Company?</h3>
             <p className="text-gray-600 text-sm max-w-xl">
-              If you run an AV company or work as a freelance technician and want consistent production work without the sales overhead — the Beacon AV partner program was built for you.
+              If you run an AV company or work as a freelance technician and want consistent production work without the sales overhead -- the Beacon AV partner program was built for you.
             </p>
           </div>
           <Link href="/partners" className="btn-primary whitespace-nowrap flex-shrink-0">Join Our Network</Link>

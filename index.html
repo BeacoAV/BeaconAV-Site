@@ -684,5 +684,40 @@
   }
 </script>
 
+  <!-- ============================================================
+       HUBSPOT LEAD CAPTURE — Portal 148200095 (EU1)
+       Added: 2026-04-08
+       Intercepts the quote form and identifies the contact in HubSpot.
+       ============================================================ -->
+  <script type="text/javascript" id="hs-script-loader" async defer
+    src="//js-eu1.hs-scripts.com/148200095.js"></script>
+  <script>
+    (function () {
+      document.addEventListener('submit', function (e) {
+        var form = e.target;
+        if (!form || form.tagName !== 'FORM') return;
+
+        var data    = new FormData(form);
+        var full    = (data.get('name') || '').trim();
+        var parts   = full.split(/\s+/);
+        var first   = parts[0] || '';
+        var last    = parts.slice(1).join(' ') || '';
+
+        var _hsq = window._hsq = window._hsq || [];
+        _hsq.push(['identify', {
+          email:     data.get('email')                          || '',
+          firstname: first,
+          lastname:  last,
+          phone:     data.get('phone')                          || '',
+          company:   data.get('company')                        || '',
+          city:      data.get('event_city') || data.get('city') || ''
+        }]);
+
+        // Log event so it appears in HubSpot contact activity
+        _hsq.push(['trackEvent', { id: 'Quote Form Submitted' }]);
+      }, true /* capture phase — fires before existing handlers */);
+    })();
+  </script>
+  <!-- ============================================================ -->
 </body>
 </html>

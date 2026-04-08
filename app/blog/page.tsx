@@ -150,7 +150,7 @@ export default function BlogPage() {
           <div className="mt-14 bg-gray-50 rounded-2xl p-8 text-center">
             <h2 className="text-xl font-bold text-navy mb-2">Get New Guides in Your Inbox</h2>
             <p className="text-gray-600 text-sm mb-6">Practical AV and smart home guides — no spam, no sales pitch. Unsubscribe any time.</p>
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
+            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="#">
               <input
                 type="email"
                 placeholder="your@email.com"

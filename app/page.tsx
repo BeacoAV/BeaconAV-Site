@@ -173,7 +173,7 @@ export default function HomePage() {
                 <li className="flex gap-2"><span className="text-accent">✓</span> LED walls & custom production</li>
               </ul>
             </div>
-            <Link href="/contact" className="btn-primary w-full text-center block py-3">Get a Free Quote</Link>
+            <Link href="/contact" className="btn-primary w-full text-center block py-3">Get a Production Quote</Link>
             <p className="text-gray-400 text-xs text-center mt-3">Most quotes delivered within 48 hours</p>
           </div>
         </div>

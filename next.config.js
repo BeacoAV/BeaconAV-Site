@@ -12,6 +12,15 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      { source: '/services/av-installation', destination: '/services', permanent: true },
+      { source: '/services/smart-home-automation', destination: '/services', permanent: true },
+      { source: '/services/security-systems', destination: '/services', permanent: true },
+      { source: '/services/networking-wifi', destination: '/services', permanent: true },
+      { source: '/services/commercial-av', destination: '/services', permanent: true },
+    ];
+  },
 };
 
 module.exports = nextConfig;

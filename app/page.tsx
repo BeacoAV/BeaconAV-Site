@@ -80,7 +80,7 @@ const faqs = [
   },
   {
     q: 'Do you work in my city?',
-    a: 'We currently serve 50+ US cities with new markets added monthly. Check our Locations page to find your city. If we're not there yet, we can usually source a vetted professional within 48 hours.',
+    a: "We currently serve 50+ US cities with new markets added monthly. Check our Locations page to find your city. If we're not there yet, we can usually source a vetted professional within 48 hours.",
   },
   {
     q: 'How fast can you schedule an installation?',
@@ -118,7 +118,6 @@ export default function HomePage() {
               See How It Works
             </Link>
           </div>
-          {/* Trust badges */}
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
             {['500+ Certified Installers', '50+ Cities Served', 'Same-Week Availability', '30-Day Guarantee'].map((b) => (
               <span key={b} className="flex items-center gap-2">
@@ -161,11 +160,10 @@ export default function HomePage() {
                 </span>
               </Link>
             ))}
-            {/* CTA Card */}
             <div className="bg-navy rounded-xl p-6 flex flex-col justify-center text-center">
               <p className="text-white font-bold text-lg mb-2">Not sure what you need?</p>
               <p className="text-gray-300 text-sm mb-4">
-                Tell us about your project and we'll recommend the right services.
+                Tell us about your project and we&apos;ll recommend the right services.
               </p>
               <Link href="/contact" className="btn-primary text-sm">
                 Get a Free Quote
@@ -182,7 +180,7 @@ export default function HomePage() {
             <p className="section-label">Simple Process</p>
             <h2 className="section-title">How Beacon AV Works</h2>
             <p className="text-gray-600 mt-3 max-w-xl mx-auto">
-              Unlike local one-man operations, Beacon AV manages quality control centrally. Every installer is vetted, insured, and trained to the same standard — whether you're in Dallas or Denver.
+              Unlike local one-man operations, Beacon AV manages quality control centrally. Every installer is vetted, insured, and trained to the same standard — whether you&apos;re in Dallas or Denver.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -257,7 +255,7 @@ export default function HomePage() {
             <div className="bg-gray-50 rounded-2xl p-8">
               <h3 className="text-navy font-bold text-xl mb-6">Ready to get started?</h3>
               <p className="text-gray-600 mb-6">
-                Tell us about your project and we'll match you with the right professional in your city — typically within 24 hours.
+                Tell us about your project and we&apos;ll match you with the right professional in your city — typically within 24 hours.
               </p>
               <Link href="/contact" className="btn-primary w-full text-center block">
                 Request a Free Quote
@@ -283,7 +281,7 @@ export default function HomePage() {
             <p className="section-label">Pricing</p>
             <h2 className="section-title">What Does AV & Smart Home Installation Cost?</h2>
             <p className="text-gray-600 mt-3">
-              Pricing depends on project size, technology brands, and your location. Here's a general guide:
+              Pricing depends on project size, technology brands, and your location. Here&apos;s a general guide:
             </p>
           </div>
           <div className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm">
@@ -338,7 +336,7 @@ export default function HomePage() {
             Ready to Get Started?
           </h2>
           <p className="text-blue-100 text-lg mb-8">
-            Tell us about your project and we'll match you with the right professional in your city — typically within 24 hours.
+            Tell us about your project and we&apos;ll match you with the right professional in your city — typically within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="bg-white text-accent hover:bg-gray-100 font-bold px-8 py-4 rounded transition-colors text-lg">

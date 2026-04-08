@@ -9,16 +9,16 @@ export const metadata: Metadata = {
 };
 
 const eventTypes = [
-  { icon: '🏢', title: 'Corporate Events', desc: 'All-hands meetings, town halls, leadership summits, and internal events — produced to the standard your brand demands.' },
-  { icon: '🎤', title: 'Conferences & Conventions', desc: 'General sessions, breakouts, keynotes, and multi-day conference programs. Full production from load-in through strike.' },
-  { icon: '✨', title: 'Brand Activations', desc: 'Experiential marketing, product launches, and brand experiences that put your message on a stage.' },
-  { icon: '🏆', title: 'Galas & Award Ceremonies', desc: 'High-production galas, award shows, and fundraising events with lighting, staging, and technical execution to match the occasion.' },
+  { icon: 'CORPORATE', title: 'Corporate Events', desc: 'All-hands meetings, town halls, leadership summits, and internal events produced at scale.' },
+  { icon: 'CONFERENCE', title: 'Conferences & Conventions', desc: 'General sessions, breakouts, keynotes, and multi-day conference production.' },
+  { icon: 'BRAND', title: 'Brand Activations', desc: 'Experiential marketing, product launches, and brand experiences that engage.' },
+  { icon: 'GALA', title: 'Galas & Award Ceremonies', desc: 'High-production galas, award shows, and fundraising events with polished execution.' },
 ];
 
 const whyUs = [
-  { title: 'Single point of contact', desc: 'One production partner manages everything — audio, video, lighting, staging, and crew. No coordinating between five vendors.' },
+  { title: 'Single point of contact', desc: 'One production partner manages everything -- audio, video, lighting, staging, and crew. No coordinating between five vendors.' },
   { title: 'Nationwide coverage', desc: 'Active in 50+ US markets. Same production standard whether your event is in Austin, New York, or Los Angeles.' },
-  { title: 'Vetted partner network', desc: 'Our production network is built from experienced AV companies and technicians — verified, insured, and held to Beacon AV standards.' },
+  { title: 'Vetted partner network', desc: 'Our production network is built from experienced AV companies and technicians -- verified, insured, and held to Beacon AV standards.' },
   { title: 'Transparent fixed pricing', desc: 'Every event gets a written quote before we move. The number you approve is the number you pay.' },
 ];
 
@@ -31,10 +31,10 @@ const stats = [
 
 const faqs = [
   { q: 'What size events does Beacon AV support?', a: 'We produce events from 50 to 5,000+ attendees. Whether it\'s a boardroom general session or a national sales conference, our partner network scales to the requirement.' },
-  { q: 'How does Beacon AV operate nationally without a local office in every city?', a: 'We operate through a vetted partner network of AV companies and technicians in 50+ markets. Beacon AV manages the production, logistics, and quality control centrally — you deal with one team regardless of city.' },
+  { q: 'How does Beacon AV operate nationally without a local office in every city?', a: 'We operate through a vetted partner network of AV companies and technicians in 50+ markets. Beacon AV manages the production, logistics, and quality control centrally -- you deal with one team regardless of city.' },
   { q: 'Do you own equipment or rent it?', a: 'We source the best equipment for each event through our partner network. This lets us spec the right gear for your specific requirements rather than being limited to what a single company owns.' },
-  { q: 'Can you handle multi-city or touring events?', a: 'Yes — multi-city and roadshow production is one of our specialties. Our national footprint means we can execute the same show in different cities on consecutive days.' },
-  { q: 'How quickly can you turn a quote around?', a: 'Most event inquiries receive a preliminary budget range within 24 hours. A full written production quote is typically delivered within 48–72 hours.' },
+  { q: 'Can you handle multi-city or touring events?', a: 'Yes -- multi-city and roadshow production is one of our specialties. Our national footprint means we can execute the same show in different cities on consecutive days.' },
+  { q: 'How quickly can you turn a quote around?', a: 'Most event inquiries receive a preliminary budget range within 24 hours. A full written production quote is typically delivered within 48--72 hours.' },
 ];
 
 export default function HomePage() {
@@ -49,17 +49,17 @@ export default function HomePage() {
             <span className="text-accent">Any City. Any Event.</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-xl mx-auto mb-8">
-            Beacon AV delivers professional audio, video, lighting, and staging for live events across the country — all coordinated through a single production partner.
+            Beacon AV delivers professional audio, video, lighting, and staging for live events across the country -- all coordinated through a single production partner.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/contact" className="btn-primary text-base px-8 py-3">Get a Production Quote</Link>
             <Link href="/services" className="btn-outline text-base px-8 py-3">View Our Services</Link>
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-8 text-sm text-gray-400">
-            <span>✓ 50+ US Markets</span>
-            <span>✓ Audio · Video · Lighting · Staging</span>
-            <span>✓ Live Streaming & LED Walls</span>
-            <span>✓ Single Point of Contact</span>
+            <span>-- 50+ US Markets</span>
+            <span>-- Audio -- Video -- Lighting -- Staging</span>
+            <span>-- Live Streaming & LED Walls</span>
+            <span>-- Single Point of Contact</span>
           </div>
         </div>
       </section>
@@ -81,14 +81,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <p className="section-label text-center">What We Produce</p>
           <h2 className="section-title text-center mt-2 mb-4">Full-Service Production Capabilities</h2>
-          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">From crystal-clear audio to LED walls and live streaming — we handle every technical element of your event so you can focus on running it.</p>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">From crystal-clear audio to LED walls and live streaming -- we handle every technical element of your event so you can focus on running it.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((s) => (
               <Link key={s.slug} href={`/services/${s.slug}`} className="card hover:border-accent hover:shadow-md transition-all group">
                 <div className="text-3xl mb-3">{s.icon}</div>
                 <h3 className="font-bold text-navy mb-2 group-hover:text-accent transition-colors">{s.shortTitle}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{s.tagline}</p>
-                <span className="text-accent text-sm font-medium mt-3 inline-block">Learn more →</span>
+                <span className="text-accent text-sm font-medium mt-3 inline-block">Learn more --</span>
               </Link>
             ))}
           </div>
@@ -107,9 +107,9 @@ export default function HomePage() {
           <h2 className="section-title-light text-center mt-2 mb-10">How Beacon AV Works</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { n: '01', t: 'Tell us about your event', d: 'Share the basics — date, city, attendee count, and what you need. Takes under 5 minutes.' },
+              { n: '01', t: 'Tell us about your event', d: 'Share the basics -- date, city, attendee count, and what you need. Takes under 5 minutes.' },
               { n: '02', t: 'Receive your production quote', d: 'We build a full written production quote with equipment, crew, and pricing. Typically within 48 hours.' },
-              { n: '03', t: 'We coordinate everything', d: 'Beacon AV manages logistics, partner coordination, load-in, and technical execution — start to finish.' },
+              { n: '03', t: 'We coordinate everything', d: 'Beacon AV manages logistics, partner coordination, load-in, and technical execution -- start to finish.' },
               { n: '04', t: 'Flawless execution on event day', d: 'Our production team is on-site and in communication. You focus on your event. We handle the tech.' },
             ].map((step) => (
               <div key={step.n} className="bg-white/10 rounded-xl p-6 border border-white/20">
@@ -153,7 +153,7 @@ export default function HomePage() {
             <div className="space-y-5">
               {whyUs.map((w) => (
                 <div key={w.title} className="flex gap-4 items-start">
-                  <span className="text-accent font-bold text-lg flex-shrink-0 mt-0.5">✓</span>
+                  <span className="text-accent font-bold text-lg flex-shrink-0 mt-0.5">--</span>
                   <div>
                     <p className="font-semibold text-navy">{w.title}</p>
                     <p className="text-gray-600 text-sm mt-0.5">{w.desc}</p>
@@ -165,12 +165,12 @@ export default function HomePage() {
           <div className="bg-navy rounded-2xl p-8 text-white">
             <h3 className="text-xl font-bold mb-6">Request a Production Quote</h3>
             <div className="space-y-4 text-sm text-gray-300 mb-6">
-              <p>Tell us about your event and we&apos;ll turn around a full written production quote — typically within 48 hours.</p>
+              <p>Tell us about your event and we&apos;ll turn around a full written production quote -- typically within 48 hours.</p>
               <p>No obligation. No pressure. Just a fast, professional quote with everything itemized.</p>
               <ul className="space-y-2">
-                <li className="flex gap-2"><span className="text-accent">✓</span> Audio, video, lighting, staging</li>
-                <li className="flex gap-2"><span className="text-accent">✓</span> Live streaming & hybrid events</li>
-                <li className="flex gap-2"><span className="text-accent">✓</span> LED walls & custom production</li>
+                <li className="flex gap-2"><span className="text-accent">--</span> Audio, video, lighting, staging</li>
+                <li className="flex gap-2"><span className="text-accent">--</span> Live streaming & hybrid events</li>
+                <li className="flex gap-2"><span className="text-accent">--</span> LED walls & custom production</li>
               </ul>
             </div>
             <Link href="/contact" className="btn-primary w-full text-center block py-3">Get a Production Quote</Link>
@@ -184,13 +184,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto text-center">
           <p className="section-label">Nationwide Coverage</p>
           <h2 className="section-title mt-2 mb-4">We Produce Events in 50+ US Cities</h2>
-          <p className="text-gray-600 mb-8 max-w-xl mx-auto">Active production partners in every major market — and the ability to source crews in most secondary markets within 48 hours.</p>
+          <p className="text-gray-600 mb-8 max-w-xl mx-auto">Active production partners in every major market -- and the ability to source crews in most secondary markets within 48 hours.</p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             {['Austin','New York','Los Angeles','Chicago','Dallas','Miami','Las Vegas','Houston','Phoenix','Denver','Seattle','Atlanta'].map((city) => (
               <span key={city} className="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-sm text-gray-700 font-medium">{city}</span>
             ))}
           </div>
-          <Link href="/locations" className="text-accent font-semibold hover:underline">View All Locations →</Link>
+          <Link href="/locations" className="text-accent font-semibold hover:underline">View All Locations --</Link>
         </div>
       </section>
 
@@ -214,12 +214,12 @@ export default function HomePage() {
       <section className="bg-navy py-16 px-4 text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="section-title-light mb-4">Ready to Produce Something Great?</h2>
-          <p className="text-gray-300 mb-8">Tell us about your event and we&apos;ll get you a full production quote — fast.</p>
+          <p className="text-gray-300 mb-8">Tell us about your event and we&apos;ll get you a full production quote -- fast.</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/contact" className="btn-primary text-base px-8 py-3">Request a Production Quote</Link>
             <Link href="/services" className="btn-outline text-base px-8 py-3">Browse Services</Link>
           </div>
-          <p className="text-gray-400 text-sm mt-4">No obligation · Quotes within 48 hours · No spam</p>
+          <p className="text-gray-400 text-sm mt-4">No obligation -- Quotes within 48 hours -- No spam</p>
         </div>
       </section>
     </>

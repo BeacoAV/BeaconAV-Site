@@ -12,18 +12,18 @@ const eventTypes = [
   'Gala / Award Ceremony','Product Launch','Trade Show',
   'Concert / Entertainment','Private Event','Multi-City / Roadshow','Other',
 ];
-const guestCounts = ['Under 50','50â100','100â250','250â500','500â1,000','1,000â2,500','2,500+'];
-const durations = ['Half day (under 4 hours)','Full day','2 days','3â4 days','5+ days'];
-const budgets = ['Under $5,000','$5,000â$15,000','$15,000â$50,000','$50,000â$100,000','$100,000+','Not sure yet'];
+const guestCounts = ['Under 50','50\u2013100','100\u2013250','250\u2013500','500\u20131,000','1,000\u20132,500','2,500+'];
+const durations = ['Half day (under 4 hours)','Full day','2 days','3\u20134 days','5+ days'];
+const budgets = ['Under $5,000','$5,000\u2013$15,000','$15,000\u2013$50,000','$50,000\u2013$100,000','$100,000+','Not sure yet'];
 const serviceOptions = [
-  { id:'audio', label:'Audio Systems', icon:'ðï¸' },
-  { id:'video', label:'Video & Projection', icon:'ð¬' },
-  { id:'lighting', label:'Lighting', icon:'ð¡' },
-  { id:'staging', label:'Staging & Set Design', icon:'ð­' },
-  { id:'led', label:'LED Walls / Screens', icon:'ð¥ï¸' },
-  { id:'streaming', label:'Live Streaming / Hybrid', icon:'ð¡' },
-  { id:'technicians', label:'On-Site Technicians', icon:'ð§' },
-  { id:'fullproduction', label:'Full Production Management', icon:'ðª' },
+  { id:'audio', label:'Audio Systems', icon:'\uD83C\uDF99\uFE0F' },
+  { id:'video', label:'Video & Projection', icon:'\uD83C\uDFAC' },
+  { id:'lighting', label:'Lighting', icon:'\uD83D\uDCA1' },
+  { id:'staging', label:'Staging & Set Design', icon:'\uD83C\uDFAD' },
+  { id:'led', label:'LED Walls / Screens', icon:'\uD83D\uDDA5\uFE0F' },
+  { id:'streaming', label:'Live Streaming / Hybrid', icon:'\uD83D\uDCE1' },
+  { id:'technicians', label:'On-Site Technicians', icon:'\uD83D\uDD27' },
+  { id:'fullproduction', label:'Full Production Management', icon:'\uD83C\uDFAA' },
 ];
 
 const STEPS = ['Event Basics','Scale & Budget','Services','Contact Info'];
@@ -99,7 +99,7 @@ export default function ContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `New Event Quote â ${form.event_type || 'Event'} â ${form.city} â ${form.guest_count}`,
+          subject: `New Event Quote \u2014 ${form.event_type || 'Event'} \u2014 ${form.city} \u2014 ${form.guest_count}`,
           name: `${form.firstname} ${form.lastname}`.trim(),
           email: form.email,
           phone: form.phone,
@@ -135,7 +135,7 @@ export default function ContactPage() {
           <p className="section-label">Get a Quote</p>
           <h1 className="section-title-light mt-2 mb-4 max-w-3xl">Request a Production Quote</h1>
           <p className="text-gray-300 max-w-2xl">
-            Tell us about your event and we&apos;ll send a full, itemized production quote â typically within 48 hours. No obligation.
+            Tell us about your event and we&apos;ll send a full, itemized production quote {'\u2014'} typically within 48 hours. No obligation.
           </p>
         </div>
       </section>
@@ -145,7 +145,7 @@ export default function ContactPage() {
           <div className="lg:col-span-2" ref={topRef}>
             {status === 'success' ? (
               <div className="bg-green-50 border border-green-200 rounded-2xl p-10 text-center">
-                <div className="text-5xl mb-4">â</div>
+                <div className="text-5xl mb-4">{'\u2705'}</div>
                 <h2 className="text-2xl font-bold text-navy mb-3">Quote Request Received</h2>
                 <p className="text-gray-600 mb-2">We&apos;ve received your event details and will follow up with a full production quote within 48 hours.</p>
                 <p className="text-gray-500 text-sm">Check {form.email} for a confirmation.</p>
@@ -162,7 +162,7 @@ export default function ContactPage() {
                           i === step ? 'bg-accent text-white' :
                           'bg-gray-200 text-gray-500'
                         }`}>
-                          {i < step ? 'â' : i + 1}
+                          {i < step ? '\u2713' : i + 1}
                         </div>
                         <span className={`text-xs font-medium hidden sm:inline ${i === step ? 'text-accent' : 'text-gray-400'}`}>{label}</span>
                         {i < STEPS.length - 1 && <div className={`hidden sm:block h-0.5 w-8 mx-1 ${i < step ? 'bg-green-400' : 'bg-gray-200'}`} />}
@@ -172,7 +172,7 @@ export default function ContactPage() {
                   <div className="w-full bg-gray-100 rounded-full h-1.5 mt-3">
                     <div className="bg-accent h-1.5 rounded-full transition-all" style={{ width: `${((step) / (STEPS.length - 1)) * 100}%` }} />
                   </div>
-                  <p className="text-xs text-gray-400 mt-2">Step {step + 1} of {STEPS.length} â {STEPS[step]}</p>
+                  <p className="text-xs text-gray-400 mt-2">Step {step + 1} of {STEPS.length} {'\u2014'} {STEPS[step]}</p>
                 </div>
 
                 {/* Step 0: Event Basics */}
@@ -304,13 +304,13 @@ export default function ContactPage() {
                 <div className="mt-8 flex gap-3">
                   {step > 0 && (
                     <button type="button" onClick={back} className="px-6 py-3 border border-gray-300 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">
-                      â Back
+                      {'\u2190'} Back
                     </button>
                   )}
                   {step < 3 ? (
                     <button type="button" onClick={next} disabled={!canAdvance()}
                       className="flex-1 py-3 rounded-xl bg-accent text-white font-semibold text-base transition-colors hover:bg-accent-dark disabled:opacity-50 disabled:cursor-not-allowed">
-                      Continue â
+                      Continue {'\u2192'}
                     </button>
                   ) : (
                     <button type="submit" disabled={status === 'submitting' || !canAdvance()}
@@ -321,7 +321,7 @@ export default function ContactPage() {
                 </div>
 
                 {status === 'error' && <p className="text-red-600 text-sm mt-4">{errorMsg}</p>}
-                <p className="text-gray-400 text-xs text-center mt-4">No obligation Â· Quotes within 48 hours Â· No spam</p>
+                <p className="text-gray-400 text-xs text-center mt-4">No obligation {'\u00B7'} Quotes within 48 hours {'\u00B7'} No spam</p>
               </form>
             )}
           </div>
@@ -354,13 +354,13 @@ export default function ContactPage() {
             <div className="card">
               <h3 className="font-bold text-navy mb-2">Talk to Our Team</h3>
               <p className="text-sm text-gray-600 mb-3">Prefer to talk through your event first?</p>
-              <p className="text-sm font-medium text-navy">Mon â Fri, 8am â 6pm CT</p>
+              <p className="text-sm font-medium text-navy">Mon {'\u2013'} Fri, 8am {'\u2013'} 6pm CT</p>
               <a href="mailto:hello@beaconav.co" className="text-accent text-sm font-medium hover:underline">hello@beaconav.co</a>
             </div>
             <div className="bg-navy rounded-xl p-5">
               <p className="text-white font-bold mb-1">AV Partner?</p>
               <p className="text-gray-300 text-sm mb-3">Looking to join our production network?</p>
-              <Link href="/partners" className="text-accent text-sm font-semibold hover:underline">Learn about the partner program â</Link>
+              <Link href="/partners" className="text-accent text-sm font-semibold hover:underline">Learn about the partner program {'\u2192'}</Link>
             </div>
           </div>
         </div>

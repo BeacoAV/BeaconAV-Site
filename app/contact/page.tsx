@@ -590,6 +590,7 @@ export default function QuoteForm() {
                         Next
                       </button>
                     ) : (
+                      <>
                       <button
                         type="submit"
                         disabled={submitting}
@@ -600,6 +601,7 @@ export default function QuoteForm() {
                       {submitError && (
                         <p className="text-red-500 text-sm mt-2 text-center">{submitError}</p>
                       )}
+                      </>
                     )}
                   </div>
                 </form>

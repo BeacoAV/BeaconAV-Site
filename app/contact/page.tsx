@@ -138,11 +138,16 @@ export default function QuoteForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Validate required fields
+    setSubmitError('');
     if (!formData.name || !formData.email) {
-      alert('Please fill in all required fields');
+      setSubmitError('Please fill in all required fields');
       return;
     }
+    if (formData.services.length === 0) {
+      setSubmitError('Please select at least one service');
+      return;
+    }
+    setSubmitting(true);
     try {
       const response = await fetch('/api/leads/intake', {
         method: 'POST',
@@ -151,12 +156,14 @@ export default function QuoteForm() {
       });
       const result = await response.json();
       if (!response.ok) {
-        console.error('API error:', result.error);
+        throw new Error(result.error || 'Something went wrong');
       }
+      setSubmitted(true);
     } catch (err) {
-      console.error('Fetch error:', err);
+      setSubmitError(err instanceof Error ? err.message : 'Something went wrong. Please try again or email info@beaconav.co');
+    } finally {
+      setSubmitting(false);
     }
-    setSubmitted(true);
   };
 
   if (submitted) {
@@ -585,10 +592,14 @@ export default function QuoteForm() {
                     ) : (
                       <button
                         type="submit"
-                        className="px-8 py-2 bg-[#0c2340] text-white rounded-lg font-semibold hover:bg-blue-900 transition-colors ml-auto"
+                        disabled={submitting}
+                        className="px-8 py-2 bg-[#0c2340] text-white rounded-lg font-semibold hover:bg-blue-900 transition-colors ml-auto disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        Submit Quote Request
+                        {submitting ? 'Submitting...' : 'Submit Quote Request'}
                       </button>
+                      {submitError && (
+                        <p className="text-red-500 text-sm mt-2 text-center">{submitError}</p>
+                      )}
                     )}
                   </div>
                 </form>

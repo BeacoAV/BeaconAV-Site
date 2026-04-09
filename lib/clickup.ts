@@ -133,7 +133,7 @@ export async function createClickUpTask(
     due_date: dueDate,
     due_date_time: true,
     tags: buildTags(lead),
-    status: 'Open',
+    status: 'to do',
   };
 
   const response = await fetch(

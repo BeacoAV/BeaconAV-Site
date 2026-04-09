@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.metaDescription,
       type: "article",
       publishedTime: post.publishDate,
-    };
+    },
   };
 }
 

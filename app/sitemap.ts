@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { services } from '@/lib/services';
 import { cities } from '@/lib/cities';
+import { blogPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://beaconav.co';
@@ -30,5 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...servicePages, ...cityPages];
+  const blogPages = blogPosts.map((p) => ({
+    url: base + '/blog/' + p.slug,
+    lastModified: p.publishDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...servicePages, ...cityPages, ...blogPages];
 }

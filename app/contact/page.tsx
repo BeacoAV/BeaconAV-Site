@@ -134,49 +134,20 @@ export default function QuoteForm() {
     }
   };
 
-  const [submitting, setSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitError('');
-
     // Validate required fields
     if (!formData.name || !formData.email) {
-      setSubmitError('Please fill in all required fields');
+      alert('Please fill in all required fields');
       return;
     }
-
-    if (formData.services.length === 0) {
-      setSubmitError('Please select at least one service');
-      return;
-    }
-
-    setSubmitting(true);
-
-    try {
-      const response = await fetch('/api/leads/intake', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Something went wrong');
-      }
-
-      setSubmitted(true);
-    } catch (error) {
-      setSubmitError(
-        error instanceof Error
-          ? error.message
-          : 'Something went wrong. Please try again or email info@beaconav.co'
-      );
-    } finally {
-      setSubmitting(false);
-    }
+    // Send to lead intake API
+    fetch('/api/leads/intake', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    }).catch(console.error);
+    setSubmitted(true);
   };
 
   if (submitted) {
@@ -605,14 +576,10 @@ export default function QuoteForm() {
                     ) : (
                       <button
                         type="submit"
-                        disabled={submitting}
-                        className="px-8 py-2 bg-[#0c2340] text-white rounded-lg font-semibold hover:bg-blue-900 transition-colors ml-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-8 py-2 bg-[#0c2340] text-white rounded-lg font-semibold hover:bg-blue-900 transition-colors ml-auto"
                       >
-                        {submitting ? 'Submitting...' : 'Submit Quote Request'}
+                        Submit Quote Request
                       </button>
-                      {submitError && (
-                        <p className="text-red-500 text-sm mt-2 text-center">{submitError}</p>
-                      )}
                     )}
                   </div>
                 </form>

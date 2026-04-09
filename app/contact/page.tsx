@@ -134,19 +134,26 @@ export default function QuoteForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Validate required fields
     if (!formData.name || !formData.email) {
       alert('Please fill in all required fields');
       return;
     }
-    // Send to lead intake API
-    fetch('/api/leads/intake', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    }).catch(console.error);
+    try {
+      const response = await fetch('/api/leads/intake', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      if (!response.ok) {
+        console.error('API error:', result.error);
+      }
+    } catch (err) {
+      console.error('Fetch error:', err);
+    }
     setSubmitted(true);
   };
 

@@ -1,7 +1,7 @@
 // app/api/leads/intake/route.ts — Lead intake webhook endpoint
 
 import { NextRequest, NextResponse } from 'next/server';
-import { validateLeadForm, LeadFormData, ProcessedLead } from '@/lib/lead-types';
+import { validateLeadForm, LeadFormData, ProcessedLead, QuotingEngineResponse } from '@/lib/lead-types';
 import { analyzeLeadWithClaude } from '@/lib/quoting-engine';
 import { createClickUpTask } from '@/lib/clickup';
 
@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     let body: unknown;
     try {
       body = await request.json();
-    } catch {
+    } catch (_e) {
       return NextResponse.json(
         { error: 'Invalid JSON in request body' },
         { status: 400 }
@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
       id: `lead_${Date.now()}_${Math.random().toString(36).substring(2, 8)}`,
       receivedAt: new Date().toISOString(),
       formData,
-      analysis: analysis!,
+      analysis: analysis as QuotingEngineResponse,
       clickupTaskId: clickupResult?.taskId,
       clickupTaskUrl: clickupResult?.taskUrl,
     };

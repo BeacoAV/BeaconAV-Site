@@ -15,21 +15,24 @@ function checkRateLimit(email: string): boolean {
   const key = email.toLowerCase();
 
   // Clean old entries
-  for (const [k, timestamp] of recentSubmissions) {
+  recentSubmissions.forEach((timestamp, k) => {
     if (now - timestamp > RATE_LIMIT_WINDOW) {
       recentSubmissions.delete(k);
     }
-  }
+  });
 
-  const count = Array.from(recentSubmissions.entries())
-    .filter(([k]) => k === key)
-    .length;
+  let count = 0;
+  recentSubmissions.forEach((_timestamp, k) => {
+    if (k === key || k.startsWith(key + '-')) {
+      count++;
+    }
+  });
 
   if (count >= RATE_LIMIT_MAX) {
     return false;
   }
 
-  recentSubmissions.set(`${key}-${now}`, now);
+  recentSubmissions.set(key + '-' + now, now);
   return true;
 }
 
@@ -90,7 +93,7 @@ export async function POST(request: NextRequest) {
 
     // 6. Build processed lead record
     const processedLead: ProcessedLead = {
-      id: `lead_${Date.now()}_${Math.random().toString(36).substring(2, 8)}`,
+      id: 'lead_' + Date.now() + '_' + Math.random().toString(36).substring(2, 8),
       receivedAt: new Date().toISOString(),
       formData,
       analysis: analysis as QuotingEngineResponse,
@@ -108,15 +111,15 @@ export async function POST(request: NextRequest) {
       eventType: formData.eventType,
       budgetRange: formData.budgetRange,
       complexity: analysis?.scopeAssessment?.complexity,
-      pricingRange: analysis ? `$${analysis.pricingDirection.rangeMin}-$${analysis.pricingDirection.rangeMax}` : 'N/A',
+      pricingRange: analysis ? '$' + analysis.pricingDirection.rangeMin + '-$' + analysis.pricingDirection.rangeMax : 'N/A',
       clickupTaskId: clickupResult?.taskId,
-      processingTime: `${Date.now() - startTime}ms`,
+      processingTime: (Date.now() - startTime) + 'ms',
     }));
 
     // 8. Return success to frontend
     return NextResponse.json({
       success: true,
-      message: 'Your quote request has been received. We\'ll be in touch within 48 hours.',
+      message: "Your quote request has been received. We'll be in touch within 48 hours.",
       leadId: processedLead.id,
     });
 
